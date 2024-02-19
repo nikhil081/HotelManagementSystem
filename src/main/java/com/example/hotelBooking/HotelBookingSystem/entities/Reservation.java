@@ -23,4 +23,8 @@ public class Reservation {
     public LocalDate checkInDate;
     public LocalDate checkOutDate;
 
+    @Override
+    public String toString() {
+        return "Reservation{id=" + id + ", checkInDate=" + checkInDate + ", checkOutDate=" + checkOutDate + '}';
+    }
 }

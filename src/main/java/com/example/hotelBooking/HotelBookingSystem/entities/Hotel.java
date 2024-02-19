@@ -21,5 +21,8 @@ public class Hotel {
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
     private List<Reservation> reservations;
-
+    @Override
+    public String toString() {
+        return "Hotel{id=" + id + ", name='" + name + "', address='" + address + "'}";
+    }
 }

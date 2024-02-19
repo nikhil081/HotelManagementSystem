@@ -37,10 +37,8 @@ public class ReservationController {
     public ResponseEntity<Reservation> makeReservation(
             @PathVariable Long hotelId,
             @RequestBody Reservation reservation) {
-        Reservation newReservation = reservationService.makeReservation(hotelId, reservation);
-        return newReservation != null ?
-                ResponseEntity.status(HttpStatus.CREATED).body(newReservation) :
-                ResponseEntity.notFound().build();
+        return
+                ResponseEntity.status(HttpStatus.CREATED).body(reservationService.makeReservation(hotelId, reservation));
     }
 
     @DeleteMapping("/{reservationId}")
