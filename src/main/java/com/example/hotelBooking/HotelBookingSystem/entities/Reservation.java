@@ -27,8 +27,5 @@ public class Reservation {
     @Enumerated(EnumType.STRING)
     public ReservationStatus status;
 
-    @Override
-    public String toString() {
-        return "Reservation{id=" + id + ", checkInDate=" + checkInDate + ", checkOutDate=" + checkOutDate + '}';
-    }
+
 }
