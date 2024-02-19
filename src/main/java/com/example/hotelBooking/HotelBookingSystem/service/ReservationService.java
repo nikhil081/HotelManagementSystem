@@ -28,10 +28,7 @@ public class ReservationService {
         return reservationRepository.findByHotelId(hotelId);
     }
 
-    public List<Reservation> getAvailableRooms(Long hotelId, LocalDate checkInDate, LocalDate checkOutDate) {
-        return reservationRepository.findByHotelIdAndCheckInDateGreaterThanEqualAndCheckOutDateLessThanEqual(
-                hotelId, checkInDate, checkOutDate);
-    }
+
 
     public Reservation makeReservation(Long hotelId, Reservation reservation) {
         Optional<Hotel> optionalHotel = hotelRepository.findById(hotelId);

@@ -9,6 +9,5 @@ import java.util.List;
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
     List<Reservation> findByHotelId(Long hotelId);
 
-    List<Reservation> findByHotelIdAndCheckInDateGreaterThanEqualAndCheckOutDateLessThanEqual(
-            Long hotelId, LocalDate checkInDate, LocalDate checkOutDate);
+
 }

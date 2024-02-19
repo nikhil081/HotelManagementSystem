@@ -22,16 +22,10 @@ public class ReservationController {
 
     @GetMapping("/by-hotel/{hotelId}")
     public List<Reservation> getReservationsByHotel(@PathVariable Long hotelId) {
-        return reservationService.getReservationsByHotel(hotelId);
+        return ResponseEntity.ok(reservationService.getReservationsByHotel(hotelId)).getBody();
     }
 
-    @GetMapping("/available")
-    public List<Reservation> getAvailableRooms(
-            @RequestParam Long hotelId,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkInDate,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkOutDate) {
-        return reservationService.getAvailableRooms(hotelId, checkInDate, checkOutDate);
-    }
+
 
     @PostMapping("/{hotelId}")
     public ResponseEntity<Reservation> makeReservation(
