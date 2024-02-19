@@ -1,5 +1,6 @@
 package com.example.hotelBooking.HotelBookingSystem.entities;
 
+import com.example.hotelBooking.HotelBookingSystem.enums.ReservationStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,9 @@ public class Reservation {
 
     public LocalDate checkInDate;
     public LocalDate checkOutDate;
+
+    @Enumerated(EnumType.STRING)
+    public ReservationStatus status;
 
     @Override
     public String toString() {
