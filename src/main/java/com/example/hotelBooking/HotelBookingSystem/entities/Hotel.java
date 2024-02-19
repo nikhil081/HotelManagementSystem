@@ -22,4 +22,9 @@ public class Hotel {
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
     private List<Reservation> reservations;
 
+    public Hotel(long l, String s, String s1) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+    }
 }
